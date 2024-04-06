@@ -7,4 +7,5 @@ Rehab is an application that is built for patients who are recovering from vario
 
 More to come soon! 
 
-Adding a Mockup of the Application and illustration of the "user's progression" through the app: https://www.figma.com/file/pA8T4N6lxj4GM4rijXYgVu/Rehab-App?type=whiteboard&node-id=0-1&t=5lwhNBLUJbycB1j6-0
+Adding a Mockup of the Application and illustration of the "user's progression" through the app: 
+[Rehab App.pdf](https://github.com/Oscar-Ore007/rehab/files/14893821/Rehab.App.pdf)
