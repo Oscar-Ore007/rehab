@@ -1,1 +1,3 @@
-//Will add Express/Node backend with MongoDb and Mongoose 
+import express from "express";
+
+const app = express();
