@@ -1,8 +1,29 @@
+// Import necessary modules
 import express from "express";
-import { PORT } from "./config.js";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
 
-const dotenv = require("dotenv");
+// Load environment variables from .env file
+dotenv.config();
 
-const url = process.env.mongoDBURL;
+// Connect to MongoDB
+mongoose
+	.connect(process.env.mongoDBURL)
+	.then(() => {
+		console.log("Connected to MongoDB");
+	})
+	.catch((error) => {
+		console.error("Error connecting to MongoDB:", error);
+	});
 
+// Create Express app
 const app = express();
+
+// Define routes and middleware
+// ...
+
+// Start the server
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
+});
