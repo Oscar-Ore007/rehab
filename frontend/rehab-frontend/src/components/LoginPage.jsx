@@ -10,15 +10,25 @@ export default function LoginPage() {
 		>
 			<Typography
 				sx={{
-					textAlign: "flex-start",
-					padding: 1,
+					textAlign: "center",
+					padding: 5,
+					margin: 1,
 				}}
 			>
 				Welcome to Rehab!
 			</Typography>
-			<TextField placeholder='Enter Email' type='email'></TextField>
+			<TextField
+				placeholder='Enter Email'
+				type='email'
+				sx={{ width: "300px" }}
+			></TextField>
 			<br></br>
-			<TextField placeholder='Enter Password' type='password'></TextField>
+			<br></br>
+			<TextField
+				placeholder='Enter Password'
+				type='password'
+				sx={{ width: "300px" }}
+			></TextField>
 			<Box
 				sx={{
 					display: "flex",
@@ -29,6 +39,7 @@ export default function LoginPage() {
 					sx={{
 						backgroundColor: "blue",
 						color: "white",
+						margin: 1
 					}}
 				>
 					Submit
@@ -37,6 +48,7 @@ export default function LoginPage() {
 					sx={{
 						backgroundColor: "blue",
 						color: "white",
+						margin: 1
 					}}
 				>
 					Clear
