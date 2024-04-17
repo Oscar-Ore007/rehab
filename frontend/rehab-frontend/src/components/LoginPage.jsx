@@ -1,10 +1,13 @@
 import { Paper, TextField, Typography, Box, Button } from "@mui/material";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function LoginPage() {
-	const [password, setPassword] = useState();
-	const [email, setEmail] = useState();
+	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("");
+
+	const navigate = useNavigate();
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -12,6 +15,8 @@ export default function LoginPage() {
 		if (!email || !password) {
 			alert("Please fill out all fields");
 			return;
+		} else {
+			navigate("/home");
 		}
 	};
 
@@ -66,7 +71,7 @@ export default function LoginPage() {
 							color: "white",
 							margin: 1,
 						}}
-						type="submit"
+						type='submit'
 					>
 						Submit
 					</Button>

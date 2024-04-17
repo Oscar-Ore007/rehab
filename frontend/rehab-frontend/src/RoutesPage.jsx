@@ -10,5 +10,6 @@ export default function RoutesPage() {
 			<Route exact path='/home' element={<Home />} />
 			<Route exact path='*' element={<ErrorPage />} />
 		</Routes>
+		
 	);
 }
