@@ -1,5 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { MdOutlineAddBox } from "react-icons/md"; 
+import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
+import ExercisesTable from "./home/ExerciseTable";
+import ExercisesCard from "./home/ExercisesCard";
 
 export default function Exercises() {
 	const [exercises, setExercises] = useState([]);
@@ -41,7 +46,7 @@ export default function Exercises() {
 					<MdOutlineAddBox className='text-sky-800 text-4xl' />
 				</Link>
 			</div>
-			{loading ? <Spinner /> : showType === 'table' ?  (<ExerciseTable exercises={exercises} />) : (<ExerciseCard exercises={exercises} />)}
+			{loading ? <Spinner /> : showType === 'table' ?  (<ExercisesTable exercises={exercises} />) : (<ExercisesCard exercises={exercises} />)}
     </div>
   )
 }

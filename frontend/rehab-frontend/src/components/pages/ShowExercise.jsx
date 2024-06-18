@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Backbutton from "../components/Backbutton";
-import Spinner from "../components/Spinner";
+import Backbutton from "../Backbutton";
+import Spinner from "../Spinner";
 import { useParams } from "react-router-dom";
 
 const ShowExercise = () => {

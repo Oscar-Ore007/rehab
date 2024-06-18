@@ -60,4 +60,4 @@ const ExercisesTable = ({ exercises }) => {
 	);
 };
 
-export default BooksTable;
+export default ExercisesTable;
