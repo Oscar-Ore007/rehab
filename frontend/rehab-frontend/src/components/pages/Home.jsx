@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { MdOutlineAddBox } from "react-icons/md"; 
+import { MdOutlineAddBox } from "react-icons/md";
 import { Link } from "react-router-dom";
-import Spinner from "./Spinner";
-import ExercisesTable from "./home/ExerciseTable";
-import ExercisesCard from "./home/ExercisesCard";
+import Spinner from "../components/Spinner";
+import ExercisesCard from "../components/home/ExercisesCard";
+import BooksTable from "../components/home/BooksTable";
 
-export default function Exercises() {
+const Home = () => {
 	const [exercises, setExercises] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [showType, setShowType] = useState("table");
@@ -15,8 +15,8 @@ export default function Exercises() {
 		setLoading(true);
 		axios
 			.get("http://localhost:5555/exercises")
-      .then((response) => {
-        setExercises(response.data.data);
+			.then((response) => {
+				setExercises(response.data.data);
 				setLoading(false);
 			})
 			.catch((error) => {
@@ -24,8 +24,8 @@ export default function Exercises() {
 				setLoading(false);
 			});
 	}, []);
-  return (
-    <div className='p-4'>
+	return (
+		<div className='p-4'>
 			<div className='flex justify-center items-center gap-x-4'>
 				<button
 					className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
@@ -41,12 +41,20 @@ export default function Exercises() {
 				</button>
 			</div>
 			<div className='flex justify-between items-center'>
-				<h1 className='text-3xl my-8'>Exercise List</h1>
-				<Link to='/exercise/create'>
+				<h1 className='text-3xl my-8'>Exercises List</h1>
+				<Link to='/books/create'>
 					<MdOutlineAddBox className='text-sky-800 text-4xl' />
 				</Link>
 			</div>
-			{loading ? <Spinner /> : showType === 'table' ?  (<ExercisesTable exercises={exercises} />) : (<ExercisesCard exercises={exercises} />)}
-    </div>
-  )
-}
+			{loading ? (
+				<Spinner />
+			) : showType === "table" ? (
+				<BooksTable exercises={exercises} />
+			) : (
+				<BooksCard exercises={exercises} />
+			)}
+		</div>
+	);
+};
+
+export default Home;
