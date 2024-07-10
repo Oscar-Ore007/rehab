@@ -20,7 +20,8 @@ export default function LoginPage() {
 		}
 	};
 
-	return (
+	return(
+		<Box>
 		<Paper
 			sx={{
 				width: "600px",
@@ -92,5 +93,6 @@ export default function LoginPage() {
 				</Box>
 			</form>
 		</Paper>
+		</Box>
 	);
 }
