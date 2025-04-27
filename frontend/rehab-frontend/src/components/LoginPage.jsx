@@ -3,18 +3,25 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+//TODO: Add JWT tokens authenication that way the user can stay logged in for a certain amount of time
+
 export default function LoginPage() {
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
+	const [error, setError] = useState("");
 
 	const navigate = useNavigate();
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		setError("");
 
-		if (!email || !password) {
-			alert("Please fill out all fields");
-			return;
+		if (!email && !password) {
+			setError("Please fill out both email and password fields");
+		} else if (!email) {
+			setError("Please enter your email");
+		} else if (!password) {
+			setError("Please enter your password");
 		} else {
 			navigate("/home");
 		}
@@ -44,20 +51,22 @@ export default function LoginPage() {
 					placeholder='Enter Email'
 					type='email'
 					value={email}
-					required
 					onChange={(e) => setEmail(e.target.value)}
 					sx={{ width: "300px" }}
-				></TextField>
-				<br></br>
-				<br></br>
+				/>
+				<br /><br />
 				<TextField
 					placeholder='Enter Password'
 					type='password'
 					value={password}
-					required
 					onChange={(e) => setPassword(e.target.value)}
 					sx={{ width: "300px" }}
-				></TextField>
+				/>
+				{error && (
+					<Typography color="error" sx={{ mt: 2 }}>
+						{error}
+					</Typography>
+				)}
 				<Box
 					sx={{
 						display: "flex",
@@ -85,6 +94,7 @@ export default function LoginPage() {
 						onClick={() => {
 							setEmail("");
 							setPassword("");
+							setError("");
 						}}
 					>
 						Clear
