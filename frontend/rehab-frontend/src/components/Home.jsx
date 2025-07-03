@@ -4,7 +4,7 @@ export default function Home() {
 		<>
 		<NavBar/>
 			<div className="slide-in">Welcome to the Rehab App, Dashboard</div>
-			<div> Please choose your selection</div>
+			{/* <div> Please choose your selection</div> */}
 		</>
 	);
 }

@@ -29,7 +29,7 @@ const ExerciseModal = ({ exercise, onClose }) => {
 					<BiUserCircle className='text-red-300 text-2xl' />
 					<h2 className='my-1 px-2'> {exercise.author}</h2>
 				</div>
-				<p className='mt-4'>Anthing you want to show</p>
+				<p className='mt-4'>Anything you want to show</p>
 				<p className='my-2'>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
 					eius iure non totam, dignissimos adipisci debitis laudantium
